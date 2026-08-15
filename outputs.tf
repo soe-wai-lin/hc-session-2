@@ -47,10 +47,10 @@ output "app-lb" {
   description = "DNS name of app tier loadbalancer"
 }
 
-output "RDS-endpoint" {
-  value       = aws_db_instance.mysql_rds.endpoint
-  description = "RDS endpoint name"
-}
+# output "RDS-endpoint" {
+#   value       = aws_db_instance.mysql_rds.endpoint
+#   description = "RDS endpoint name"
+# }
 
 output "route_53_alb" {
   value       = aws_route53_record.www.name

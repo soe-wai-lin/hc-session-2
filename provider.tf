@@ -2,7 +2,15 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "6.0.0-beta3"
+      version = "~> 6.0"
+    }
+  }
+
+  cloud {
+    organization = "swl-tfc"
+    workspaces {
+      name = "3tier-cf-vpc"
+      project = "3tier"
     }
   }
 }

@@ -1,6 +1,6 @@
 variable "aws_profile" {
   type        = string
-  default     = "default"
+  default     = "my-dev"
   description = "Check this profile name in ~/.aws/config"
 }
 
@@ -107,3 +107,7 @@ variable "alb_route53" {
   type        = string
   description = "Route53 map with web-asg"
 }
+
+variable "AWS_ACCESS_KEY_ID" {}
+
+variable "AWS_SECRET_ACCESS_KEY" {}

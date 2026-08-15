@@ -35,8 +35,8 @@ cat <<EOT > /var/www/html/index.html
 </head>
 <body>
   <main>
-    <h1>Are you alone? You have nobody. Don't be depress. Keep Moving</h1>
-    <p>You're stronger than you think.</p>
+    <h1>This is testing</h1>
+    <p>Test</p>
   </main>
 </body>
 </html>
