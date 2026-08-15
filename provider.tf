@@ -9,7 +9,7 @@ terraform {
   cloud {
     organization = "swl-tfc"
     workspaces {
-      name = "3tier-cf-vpc"
+      name    = "3tier-cf-vpc"
       project = "3tier"
     }
   }
