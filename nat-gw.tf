@@ -10,7 +10,6 @@ resource "aws_nat_gateway" "terra_natgw" {
   tags = {
     Name = "terra-nat-gw"
   }
-
   # To ensure proper ordering, it is recommended to add an explicit dependency
   # on the Internet Gateway for the VPC.
   depends_on = [aws_internet_gateway.terra_igw]

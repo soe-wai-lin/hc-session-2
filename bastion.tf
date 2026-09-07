@@ -8,13 +8,10 @@ resource "aws_instance" "bastion_host" {
     Name = "bastion"
   }
 }
-
 resource "aws_security_group" "bastion-sg" {
   name        = "bastion-sg"
   description = "ssh access"
   vpc_id      = aws_vpc.terra_vpc.id
-
-
 }
 resource "aws_security_group_rule" "bastion_allow_ssh" {
   type              = "ingress"

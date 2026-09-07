@@ -25,7 +25,6 @@
 #   ]
 #   depends_on = [aws_db_subnet_group.my_db_subnet_group]
 # }
-
 # # resource "aws_db_instance" "replica" {
 # #   identifier              = "mydb-01-replica"
 # #   replicate_source_db     = aws_db_instance.mysql_rds.arn
