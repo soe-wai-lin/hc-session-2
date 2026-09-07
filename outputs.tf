@@ -33,18 +33,14 @@ output "data_02_id" {
   description = "ID of terra_vpc_data_02"
 }
 
-output "cloudfront" {
-  value = aws_cloudfront_distribution.alb_cf.domain_name
+output "dashboard-lb" {
+  value       = aws_lb.dashboard_lb.dns_name
+  description = "DNS name of dashboard tier loadbalancer"
 }
 
-output "web-lb" {
-  value       = aws_lb.web_lb.dns_name
-  description = "DNS name of web tier loadbalancer"
-}
-
-output "app-lb" {
-  value       = aws_lb.app_lb.dns_name
-  description = "DNS name of app tier loadbalancer"
+output "counting-lb" {
+  value       = aws_lb.counting_lb.dns_name
+  description = "DNS name of counting tier loadbalancer"
 }
 
 # output "RDS-endpoint" {
@@ -52,7 +48,19 @@ output "app-lb" {
 #   description = "RDS endpoint name"
 # }
 
-output "route_53_alb" {
-  value       = aws_route53_record.www.name
-  description = "Route53 map with web-asg"
+# output "route_53_alb" {
+#   value       = aws_route53_record.www.name
+#   description = "Route53 map with web-asg"
+# }
+
+# output "cloudfront" {
+#   value = aws_cloudfront_distribution.alb_cf.domain_name
+# }
+
+output "ubuntu_ami_id" {
+  value = data.aws_ami.ubuntu.id
+}
+
+output "amazon_linux_ami_id" {
+  value = data.aws_ami.amazon_linux.id
 }

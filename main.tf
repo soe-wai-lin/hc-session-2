@@ -123,14 +123,5 @@ resource "aws_route_table_association" "terr_pri_asso_b" {
 }
 
 
-# data "terraform_remote_state" "db" {
-#   backend = "s3"
 
-#   config = {
-#     bucket = "swlbacket-state-store"
-#     key = "vpc/terraform.tfstate"
-#     region = "ap-southeast-1"
-#     use_lockfile = "true"
-#   }
-# }
 

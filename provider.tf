@@ -6,13 +6,13 @@ terraform {
     }
   }
 
-  cloud {
-    organization = "swl-tfc"
-    workspaces {
-      name    = "3tier-cf-vpc"
-      project = "3tier"
-    }
-  }
+  # cloud {
+  #   organization = "swl-tfc"
+  #   workspaces {
+  #     name    = "3tier-cf-vpc"
+  #     project = "3tier"
+  #   }
+  # }
 }
 #  backend "s3" {
 #    bucket = "swlbucket01"
@@ -27,4 +27,5 @@ terraform {
 
 provider "aws" {
   region = var.aws_region
+  profile = var.aws_profile
 }

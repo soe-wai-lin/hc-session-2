@@ -8,7 +8,7 @@ resource "aws_security_group_rule" "allow_mysql" {
   from_port                = 3306
   to_port                  = 3306
   protocol                 = "tcp"
-  source_security_group_id = aws_security_group.app-sg.id
+  source_security_group_id = aws_security_group.counting-sg.id
   security_group_id        = aws_security_group.db-sg.id
 }
 
@@ -19,7 +19,7 @@ resource "aws_security_group_rule" "db_allow_outbond" {
   to_port                  = 0
   protocol                 = "-1"
   from_port                = 0
-  source_security_group_id = aws_security_group.app-sg.id
+  source_security_group_id = aws_security_group.counting-sg.id
   security_group_id        = aws_security_group.db-sg.id
 }
 

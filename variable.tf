@@ -1,6 +1,6 @@
 variable "aws_profile" {
   type        = string
-  default     = "my-dev"
+  default     = "dev01-role"
   description = "Check this profile name in ~/.aws/config"
 }
 
@@ -87,18 +87,33 @@ variable "key_name" {
   type    = string
 }
 
-variable "asg_min" {
+variable "counting_asg_min" {
+  default = 1
+  type    = number
+}
+
+variable "counting_asg_max" {
   default = 2
   type    = number
 }
 
-variable "asg_max" {
+variable "counting_asg_desired_capacity" {
+  default = 1
+  type    = number
+}
+
+variable "dashboard_asg_min" {
+  default = 1
+  type    = number
+}
+
+variable "dashboard_asg_max" {
   default = 2
   type    = number
 }
 
-variable "asg_desired_capacity" {
-  default = 2
+variable "dashboard_asg_desired_capacity" {
+  default = 1
   type    = number
 }
 
@@ -108,6 +123,16 @@ variable "alb_route53" {
   description = "Route53 map with web-asg"
 }
 
-variable "AWS_ACCESS_KEY_ID" {}
+variable "dashboard_tg_port" {
+  default = 9000
+  type    = number
+}
 
-variable "AWS_SECRET_ACCESS_KEY" {}
+variable "counting_tg_port" {
+  default = 7777
+  type    = number
+}
+
+# variable "AWS_ACCESS_KEY_ID" {}
+
+# variable "AWS_SECRET_ACCESS_KEY" {}

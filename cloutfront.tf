@@ -3,10 +3,10 @@ resource "aws_cloudfront_distribution" "alb_cf" {
   enabled             = true
   comment             = "CloudFront in front of ALB"
   default_root_object = ""
-  depends_on          = [aws_autoscaling_group.web_asg]
+  depends_on          = [aws_autoscaling_group.dashboard_asg]
 
   origin {
-    domain_name = aws_lb.web_lb.dns_name
+    domain_name = aws_lb.dashboard_lb.dns_name
     origin_id   = "alb-origin"
 
     custom_origin_config {
@@ -45,7 +45,7 @@ resource "aws_cloudfront_distribution" "alb_cf" {
     # acm_certificate_arn      = aws_acm_certificate.cert.arn
     # ssl_support_method       = "sni-only"
     # minimum_protocol_version = "TLSv1.2_2021"
-    cloudfront_default_certificate = true # ✅ No ACM needed, uses default *.cloudfront.net cert
+    cloudfront_default_certificate = true # No ACM needed, uses default *.cloudfront.net cert
   }
 }
 
